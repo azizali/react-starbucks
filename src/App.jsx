@@ -1,17 +1,18 @@
 import React from 'react';
+import Header from './Header';
+import Content from './Content';
+import Footer from './Footer';
 
 export default function App(){
+  // React Fragment
   return (
-    <div>
-      This is some info
-    </div>
+    <React.Fragment>
+      <Header />
+      <p>This is some info</p>
+      <div>
+        <Content />
+        <Footer />
+      </div>
+    </React.Fragment>
   )
-}
-
-export function util (a, b){
-  return a+ b
-}
-
-export function util2 (a, b){
-  return a+ b
 }
