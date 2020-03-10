@@ -14,6 +14,7 @@ import React from 'react';
 // // Object Destructuring
 // const { name, age, phone } = obj
 
+// export default function Header(props){
 export default function Header({ name, callMe, age, friends, info }){
   // Do not do this
   // age = 36;
