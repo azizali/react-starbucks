@@ -1,10 +1,10 @@
 import React from 'react';
-import PopulationWrapper from './Population/PopulationWrapper';
+import CounterHook from './CounterScore/CounterHook';
 
 export default function App(){
   return (
     <>
-      <PopulationWrapper />
+      <CounterHook />
     </>
   )
 }
