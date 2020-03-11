@@ -1,11 +1,15 @@
 import React from 'react';
 import Counter from './CounterScore/Counter';
+import Sample from './Sample';
 
 export default function App(){
   return (
-    <Counter
-      anotherValue={200}
-      initialValue={100}
-    />
+    <>
+      <Sample />
+      <Counter
+        anotherValue={200}
+        initialValue={100}
+      />
+    </>
   )
 }
