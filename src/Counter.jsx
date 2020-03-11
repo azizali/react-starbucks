@@ -15,26 +15,25 @@ export default class Counter extends React.Component {
       count: 0,
       anotherCounter: 0
     }
-    // Way 1: prebinding `this` to the class
+    // Way 2: To bind method `this` context
     // this.handleClick = this.handleClick.bind(this)
   }
-  
-  // Pre-requisite:
-  // babel Transform Class Properties should be installed
-  // handleClick = ()=>{
-  //   // Wrong way
-  //   // this.state.count = 2
-  //   this.setState({
-  //     count: this.state.count + 1
-  //   })
-  // }
 
-  handleClick(param, e, param2) {
-    console.log('param', param, e, param2)
+  // Class Method
+  handleClick(a, b, c){
+    console.log('params', a, b, c)
     this.setState({
       count: this.state.count + 1
     })
   }
+  
+  // Way 3: Class Property
+  // handleClick = (a, b, c) => {
+  //   console.log('params', a, b, c)
+  //   this.setState({
+  //     count: this.state.count + 1
+  //   })
+  // }
 
   render(){
     console.log('I am render')
@@ -43,12 +42,10 @@ export default class Counter extends React.Component {
       <div>
         I am Counter Class {initialValue}, {anotherValue}
         <br/>
-        {/* // Way 2: Bind `this `inline */}
-        <button onClick={(e)=> {this.handleClick.call(this, 'hello', e, 'c')}}>{this.state.count}</button>
-        {/* <Footer
-          cb={this.setState}
-          value={this.state.another}
-        /> */}
+        {/* // Way 1 to bind the this context */}
+        <button onClick={(e)=> {this.handleClick.call(this, 'hello', e, 'something else')}}>{this.state.count}</button>
+        {/* Way 2 / way 3 */}
+        {/* <button onClick={(e)=> { this.handleClick('hello', e, 'something else') }}>{this.state.count}</button> */}
       </div>
     )
   }
