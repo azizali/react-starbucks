@@ -1,5 +1,5 @@
 import React from 'react';
-import Population from './Population';
+import Population from './PopulationHook';
 
 export default class App extends React.Component{
   constructor(){
